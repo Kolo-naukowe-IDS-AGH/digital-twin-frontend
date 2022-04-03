@@ -1,34 +1,100 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Digital-Twin frontend
 
-## Getting Started
+Digital-Twin frontend Next.js with Typescript.
 
-First, run the development server:
+- development
 
-```bash
-npm run dev
-# or
+Prefer to use yarn instead of npm. Feel free to use both package managers.
+Make sure you don't commit `package-lock.json`.
+
+```
+cp .env.example .env
+yarn install
 yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- build
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+```
+rm -rf node_modules
+yarn install
+yarn buld
+yarn start
+```
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+## Linting
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+To keep the code consistent, use the built-in prettier and eslint.
 
-## Learn More
+```
+Jetbrains IDE > Settings / Preferences > Plugins > Prettier
+Visual Studio Code > Plugins > Prettier
+```
 
-To learn more about Next.js, take a look at the following resources:
+### Automatic code formatting
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Prettier
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+```
+yarn format
+```
 
-## Deploy on Vercel
+- Eslint
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```
+yarn format-lint
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- Run prettier and eslint
+
+```
+yarn format-all
+```
+
+### Check code formatting
+
+Make sure the code is properly formatted before pushing to repository.
+
+- Prettier
+
+```
+yarn check-format
+```
+
+- Eslint
+
+```
+yarn check-lint
+```
+
+- Run prettier and eslint
+
+```
+yarn check-all
+```
+
+### Workflow and good practice
+
+Never commit directly to `master` branch. Create a new branch and make a pull request to `master` after finishing work.
+
+Make sure that the branch name is according to what you are doing and the functionality provided by the code.
+
+Switching branches:
+
+```shell
+git fetch origin -p
+git pull origin master
+git checkout -b <your initials>_<short branch description>
+
+e.x.
+git checkout -b DW_form_validation
+```
+
+Commit names:
+
+```shell
+git commit -m "[FE - frontend, Setup - project setup] - <your commit message>"
+
+e.x.
+git commit -m "[FE] - add basic tailwind setup"
+```
