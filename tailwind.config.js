@@ -2,7 +2,6 @@ module.exports = {
   content: [
     './src/pages/**/*.{js,ts,jsx,tsx}',
     './src/components/**/*.{js,ts,jsx,tsx}',
-    './src/layout/**/*.{js,ts,jsx,tsx}',
   ],
   darkMode: 'class',
   theme: {
@@ -14,6 +13,7 @@ module.exports = {
           100: 'var(--color-primary-100)',
           200: 'var(--color-primary-200)',
           300: 'var(--color-primary-300)',
+          400: 'var(--color-primary-400)',
           500: 'var(--color-primary-500)',
           600: 'var(--color-primary-600)',
           700: 'var(--color-primary-700)',
